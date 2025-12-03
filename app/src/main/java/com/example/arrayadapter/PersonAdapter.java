@@ -45,7 +45,6 @@ public class PersonAdapter extends ArrayAdapter<Person> {
             tvLastName.setText(person.getLastName());
         }
 
-        // Очень важно: ВСЕГДА явно задаём цвет, и для выбранного, и для невыбранного
         if (position == selectedPosition) tvLastName.setTextColor(selectedColor);
         else tvLastName.setTextColor(defaultColor);
 
