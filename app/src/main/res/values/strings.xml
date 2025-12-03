@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">RandomPeopleList</string>
+
+    <string-array name="first_names">
+        <item>Юллиана</item>
+        <item>Афелий</item>
+        <item>Сигизмунд</item>
+        <item>Алекс</item>
+        <item>Дмитрий</item>
+        <item>Анна</item>
+        <item>Мария</item>
+        <item>Петька</item>
+        <item>Василий</item>
+        <item>Николай</item>
+        <item>Ирина</item>
+        <item>Кирилл</item>
+        <item>Татьяна</item>
+        <item>Максим</item>
+        <item>Юлия</item>
+    </string-array>
+
+    <string-array name="last_names">
+        <item>Кравцов</item>
+        <item>Голбан</item>
+        <item>Мосько</item>
+        <item>Чапаев</item>
+        <item>Грозный</item>
+        <item>Тургенев</item>
+        <item>Жиждья</item>
+        <item>Карелин</item>
+        <item>Лебедев</item>
+        <item>Козлов</item>
+        <item>Новиков</item>
+        <item>Сидольчук</item>
+        <item>Трошин</item>
+        <item>Темерязев</item>
+        <item>Синдро</item>
+    </string-array>
+</resources>
