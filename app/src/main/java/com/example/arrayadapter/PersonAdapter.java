@@ -16,9 +16,13 @@ import java.util.List;
 public class PersonAdapter extends ArrayAdapter<Person> {
 
     private int selectedPosition = -1;
+    private final int defaultColor;
+    private final int selectedColor;
 
     public PersonAdapter(@NonNull Context context, @NonNull List<Person> objects) {
         super(context, 0, objects);
+        defaultColor = ContextCompat.getColor(context, android.R.color.black);
+        selectedColor = ContextCompat.getColor(context, android.R.color.holo_red_dark);
     }
 
     public void setSelectedPosition(int position) {
@@ -30,21 +34,18 @@ public class PersonAdapter extends ArrayAdapter<Person> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View itemView = convertView;
-        if (itemView == null) itemView = LayoutInflater.from(getContext()).inflate(R.layout.list_person, parent, false);
-
+        if (itemView == null)itemView = LayoutInflater.from(getContext()).inflate(R.layout.list_person, parent, false);
 
         TextView tvFirstName = itemView.findViewById(R.id.tvFirstName);
         TextView tvLastName = itemView.findViewById(R.id.tvLastName);
 
         Person person = getItem(position);
         if (person != null) {
-            tvLastName.setText(person.getLastName());
             tvFirstName.setText(person.getFirstName());
+            tvLastName.setText(person.getLastName());
         }
 
-        int defaultColor = ContextCompat.getColor(getContext(), android.R.color.black);
-        int selectedColor = ContextCompat.getColor(getContext(), android.R.color.holo_red_dark);
-
+        // Очень важно: ВСЕГДА явно задаём цвет, и для выбранного, и для невыбранного
         if (position == selectedPosition) tvLastName.setTextColor(selectedColor);
         else tvLastName.setTextColor(defaultColor);
 

@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         adapter = new PersonAdapter(this, people);
         listViewPeople.setAdapter(adapter);
 
+        listViewPeople.setSelector(android.R.color.transparent);
+
         btnAddRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,10 +89,10 @@ public class MainActivity extends AppCompatActivity {
         int firstIndex = random.nextInt(firstNames.length);
         int lastIndex = random.nextInt(lastNames.length);
 
-        String last = lastNames[lastIndex];
         String first = firstNames[firstIndex];
+        String last = lastNames[lastIndex];
 
-        people.add(new Person(first, last));
+        people.add(new Person(last, first));
 
         if (needNotify && adapter != null) {
             adapter.notifyDataSetChanged();
